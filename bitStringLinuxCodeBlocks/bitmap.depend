@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1418393712 source:/home/daniel/Desktop/C++/bitmap/main.cpp
+	<string.h>
+	<iostream>
+	"bitmap.h"
+	<cassert>
+
+1418394334 /home/daniel/Desktop/C++/bitmap/bitmap.h
+
