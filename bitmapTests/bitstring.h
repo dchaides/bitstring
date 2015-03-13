@@ -1,10 +1,12 @@
-#ifndef BITMAP_H_INCLUDED
-#define BITMAP_H_INCLUDED
+#ifndef bitstring_H_INCLUDED
+#define bitstring_H_INCLUDED
 
 
-#include <cassert>
+#include<cassert>
+#include<string.h>
+#include<iostream>
 
-class bitmap
+class bitstring
 {
 private:
 	static const unsigned int bits[];
@@ -12,9 +14,9 @@ private:
 	unsigned int len;
 
 public:
-	bitmap(unsigned char* bitString, unsigned int strlength);
-	bitmap(unsigned int);
-	~bitmap();
+	bitstring(unsigned char* bitString, unsigned int strlength);
+	bitstring(unsigned int);
+	~bitstring();
 
 	class reference {
 		unsigned char *dataptr;
@@ -47,16 +49,17 @@ public:
 	bool checkbit(unsigned int n);
 	void setbit(unsigned int n, bool val);
 	unsigned int findFreeBit();
+	unsigned int bitstring::findFreeBit(unsigned int pos);
 	unsigned int size();
 	unsigned char* data();
 	unsigned int totalMemory;
-	static void bitmap::setbit(unsigned char* arr, unsigned int n, bool val);
+	static void bitstring::setbit(unsigned char* arr, unsigned int n, bool val);
 	bool checkbit(unsigned char* arr, unsigned int n);
 	const static unsigned int findFreeBit(unsigned char* arr);
-	bitmap::reference operator[](unsigned int i);
+	bitstring::reference operator[](unsigned int i);
 
 };
 
 
 
-#endif // BITMAP_H_INCLUDED
+#endif // bitstring_H_INCLUDED

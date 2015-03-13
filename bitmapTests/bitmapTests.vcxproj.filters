@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bitmap.h">
+    <ClInclude Include="bitstring.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
