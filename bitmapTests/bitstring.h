@@ -14,6 +14,7 @@ private:
 	unsigned int len;
 
 public:
+	bitstring();
 	bitstring(unsigned char* bitString, unsigned int strlength);
 	bitstring(unsigned int);
 	~bitstring();

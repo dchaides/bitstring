@@ -6,6 +6,11 @@
 //used to evalutate an indiviual bit, 00000001, 00000010, 00000100 etc.
 const unsigned int bitstring::bits[8] = { 1, 2, 4, 8, 16, 32, 64, 128 };
 
+//default constructor of 8 bits
+bitstring::bitstring(){
+	privateBits = new unsigned char[1]();
+}
+
 //instantiate bitstring from a set number of bits to 0, if not able to be divided by 8 evenly then add an extra [8 - (bits%8)] bits
 bitstring::bitstring(unsigned int bits)
 {
@@ -13,13 +18,11 @@ bitstring::bitstring(unsigned int bits)
 
 	if ((bits % 8) != 0)
 	{
-		privateBits = new unsigned char[(bits % 8) + 1]();
-		totalMemory = (bits / 8) + 1;
+		privateBits = new unsigned char[(bits / 8) + 1]();
 	}
 	else
 	{
-		privateBits = new unsigned char[(bits % 8)]();
-		totalMemory = (bits / 8);
+		privateBits = new unsigned char[(bits / 8)]();
 	}
 }
 
@@ -122,6 +125,7 @@ unsigned char* bitstring::data() {
 
 bitstring::reference bitstring::operator[](unsigned int i) 
 { 
-	assert(i < this->len);
+	if (i >= len) throw new std::out_of_range("bitstring out of bounds");
+	else
 	return reference(&privateBits[i / 8], 1 << (i % 8)); 
 }
