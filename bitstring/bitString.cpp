@@ -1,7 +1,7 @@
 
+#include "stdafx.h"
 #include "bitstring.h"
-
-
+#include <stdexcept>
 
 //used to evalutate an indiviual bit, 00000001, 00000010, 00000100 etc.
 const unsigned int bitstring::bits[8] = { 1, 2, 4, 8, 16, 32, 64, 128 };
@@ -68,7 +68,7 @@ bool bitstring::checkbit(unsigned char* arr, unsigned int n) {
 }
 
 //find a "free bit" in the character array. This is the location of the first bit set to 0
-const unsigned int bitstring::findFreeBit(unsigned char* arr) {
+unsigned int bitstring::findFreeBit(unsigned char* arr) {
 
 	unsigned int pos = 0;
 	unsigned char* byte = arr;
@@ -105,8 +105,8 @@ unsigned int bitstring::findFreeBit() {
 //instanced checks bit of character array stored within an object starting a position pos
 unsigned int bitstring::findFreeBit(unsigned int pos) {
 
-	assert(pos < len);
-	unsigned char* byte = privateBits;
+	if (pos > len)  throw new std::out_of_range("bitstring out of bounds");
+ 	unsigned char* byte = privateBits;
 
 	while (((*byte & bitstring::bits[pos % 8]) == bitstring::bits[pos % 8]))
 	{

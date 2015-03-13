@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bitstring", "bitmapTests\bitmapTests.vcxproj", "{2937DAF4-5775-49E7-8E33-D27D4A97B616}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bitString", "bitString\bitString.vcxproj", "{F01D748D-3825-40A9-B188-A9AC6F747EF8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bitStringTests", "UnitTest1\UnitTest1.vcxproj", "{E1C52638-53B8-475B-A8A5-A7CA0226E1C6}"
 EndProject
@@ -13,10 +13,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2937DAF4-5775-49E7-8E33-D27D4A97B616}.Debug|Win32.ActiveCfg = Debug|Win32
-		{2937DAF4-5775-49E7-8E33-D27D4A97B616}.Debug|Win32.Build.0 = Debug|Win32
-		{2937DAF4-5775-49E7-8E33-D27D4A97B616}.Release|Win32.ActiveCfg = Release|Win32
-		{2937DAF4-5775-49E7-8E33-D27D4A97B616}.Release|Win32.Build.0 = Release|Win32
+		{F01D748D-3825-40A9-B188-A9AC6F747EF8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F01D748D-3825-40A9-B188-A9AC6F747EF8}.Debug|Win32.Build.0 = Debug|Win32
+		{F01D748D-3825-40A9-B188-A9AC6F747EF8}.Release|Win32.ActiveCfg = Release|Win32
+		{F01D748D-3825-40A9-B188-A9AC6F747EF8}.Release|Win32.Build.0 = Release|Win32
 		{E1C52638-53B8-475B-A8A5-A7CA0226E1C6}.Debug|Win32.ActiveCfg = Debug|Win32
 		{E1C52638-53B8-475B-A8A5-A7CA0226E1C6}.Debug|Win32.Build.0 = Debug|Win32
 		{E1C52638-53B8-475B-A8A5-A7CA0226E1C6}.Release|Win32.ActiveCfg = Release|Win32
