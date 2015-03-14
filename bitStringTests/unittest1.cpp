@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "..\bitstring\bitString.h"
-
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace bitStringTests
@@ -10,9 +9,15 @@ namespace bitStringTests
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(TestConstructor1)
 		{
-			// TODO: Your test code here
+			//test the default constructor
+			bitstring bitstring1 = bitstring::bitstring();
+			
+			Assert::AreEqual(false, bitstring1[0]);
+			
+			
+
 		}
 
 	};

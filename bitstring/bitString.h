@@ -62,6 +62,7 @@ class bitstring
 		bool checkbit(unsigned char* arr, unsigned int n);
 		unsigned int findFreeBit(unsigned char* arr);
 		unsigned int bitstring::findFreeBit(unsigned int pos);
+		bool operator[] (unsigned int n) const { return ((privateBits[n / 8] & bitstring::bits[n % 8]) == bitstring::bits[n % 8]); };
 		bitstring::reference operator[](unsigned int i);
 
 	};
