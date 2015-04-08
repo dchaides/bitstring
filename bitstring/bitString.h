@@ -48,7 +48,27 @@ public:
 			return *this;
 		}
 
+<<<<<<< HEAD
 		
+=======
+			//TODO copy ctor., operator==, operator<
+		};
+
+
+		bool checkbit(unsigned int n);
+		void setbit(unsigned int n, bool val);
+		unsigned int findFreeBit();
+		unsigned int size();
+		unsigned char* data();
+		unsigned int totalMemory;
+		static void bitstring::setbit(unsigned char* arr, unsigned int n, bool val);
+		bool checkbit(unsigned char* arr, unsigned int n);
+		unsigned int findFreeBit(unsigned char* arr);
+		unsigned int bitstring::findFreeBit(unsigned int pos);
+		bool operator[] (unsigned int n) const { return ((privateBits[n / 8] & bitstring::bits[n % 8]) == bitstring::bits[n % 8]); };
+		bitstring::reference operator[](unsigned int i);
+
+>>>>>>> 70fbefd5b5952ce82d8d3db933146204bffca40f
 	};
 	//TODO copy ctor., operator==, operator<
 	bool checkbit(unsigned int n);
