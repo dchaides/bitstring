@@ -11,61 +11,59 @@
 #endif
 
 // This class is exported from the bitString.dll
-class bitstring
-	{
-	private:
-		static const unsigned int bits[];
-		unsigned char* privateBits;
-		unsigned int len;
+class BITSTRING_API bitString {
+private:
+	static const unsigned int bits[];
+	unsigned char* privateBits;
+	unsigned int len;
 
+public:
+	bitString(void);
+	bitString(unsigned char* bitstring, unsigned int strlength);
+	bitString(unsigned int);
+	~bitString();
+	// TODO: add your methods here.
+
+	class reference {
+		unsigned char *dataptr;
+		unsigned char mask;
 	public:
-		bitstring::bitstring();
-		bitstring(unsigned char* bitString, unsigned int strlength);
-		bitstring(unsigned int);
-		~bitstring();
+		//constructor just initializing members
+		reference(unsigned char *dataptr_, unsigned char mask_) : dataptr(dataptr_), mask(mask_) {}
 
-		class reference {
-			unsigned char *dataptr;
-			unsigned char mask;
-		public:
-			//constructor just initializing members
-			reference(unsigned char *dataptr_, unsigned char mask_) : dataptr(dataptr_), mask(mask_) {}
+		//conversion to bool
+		operator bool() const {
+			//just like in the getter, but the bitmask is stored now locally
+			return *dataptr & mask;
+		}
 
-			//conversion to bool
-			operator bool() const {
-				//just like in the getter, but the bitmask is stored now locally
-				return *dataptr & mask;
+		//sets one single bit represented by mask to b
+		reference& operator=(bool b) {
+			if (b) {
+				*dataptr |= mask;
 			}
-
-			//sets one single bit represented by mask to b
-			reference& operator=(bool b) {
-				if (b) {
-					*dataptr |= mask;
-				}
-				else {
-					*dataptr &= ~mask;
-				}
-				return *this;
+			else {
+				*dataptr &= ~mask;
 			}
+			return *this;
+		}
 
-			//TODO copy ctor., operator==, operator<
-		};
-
-
-		bool checkbit(unsigned int n);
-		void setbit(unsigned int n, bool val);
-		unsigned int findFreeBit();
-		unsigned int size();
-		unsigned char* data();
-		unsigned int totalMemory;
-		static void bitstring::setbit(unsigned char* arr, unsigned int n, bool val);
-		bool checkbit(unsigned char* arr, unsigned int n);
-		unsigned int findFreeBit(unsigned char* arr);
-		unsigned int bitstring::findFreeBit(unsigned int pos);
-		bitstring::reference operator[](unsigned int i);
-
+		
 	};
+	//TODO copy ctor., operator==, operator<
+	bool checkbit(unsigned int n);
+	void setbit(unsigned int n, bool val);
+	unsigned int findFreeBit();
+	unsigned int size();
+	unsigned char* data();
+	unsigned int totalMemory;
+	static void setbit(unsigned char* arr, unsigned int n, bool val);
+	bool checkbit(unsigned char* arr, unsigned int n);
+	unsigned int findFreeBit(unsigned char* arr);
+	unsigned int findFreeBit(unsigned int pos);
+	bitString::reference operator[](unsigned int i);
+};
 
+extern BITSTRING_API int nbitString;
 
-
-
+BITSTRING_API int fnbitString(void);
